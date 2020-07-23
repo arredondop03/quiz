@@ -1,5 +1,5 @@
 const startButton = document.getElementById('start-button');
-const questionTag = document.getElementById('question');
+const header = document.getElementById('question');
 const possibleAnswers = document.getElementById('posible-answers');
 const buttonOne = document.getElementById('button-one');
 const buttonTwo = document.getElementById('button-two');
@@ -14,7 +14,15 @@ let setButtons = () => {
 }
 
 let setQuestion = () => {
-    questionTag.innerHTML = data[currentQuestion].question;
+    header.innerHTML = data[currentQuestion].question;
+}
+
+let finalScreen  = () => {
+    header.innerHTML = 'Enhorabuena!';
+    possibleAnswers.remove()
+    let message = document.createElement("p");
+    message.innerHTML = `Number of correct answers: ${correctNumberOfAnswers}`;
+    header.insertAdjacentElement('afterend', message);
 }
 
 let addOnClickToButtons = () => {
@@ -28,7 +36,7 @@ let addOnClickToButtons = () => {
                 setButtons();
                 setQuestion();
             } else {
-                console.log('done')
+                finalScreen()
             }
         }
     })
