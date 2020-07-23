@@ -1,7 +1,7 @@
 var data = [
     {
         id: 1,
-        question: 'In Florida only on Sundays, it is illegal for a single woman to do what?',
+        question: 'In Florida only on Sundays,',
         possibleAnswers: ['Paint', 'Go to the bar', 'Do her nails', 'Skydive' ],
         correctAnswer: 'Skydive',
     },
@@ -32,7 +32,7 @@ var data = [
 
     {
         id: 5,
-        question: 'What is banned in public places in Florida after 6 pm on a Thursday?',
+        question: 'What is banned in public places ',
         possibleAnswers: ['Farting', 'Doing a car wheel', 'Singing', 'Pray' ],
         correctAnswer: 'Farting',
 
