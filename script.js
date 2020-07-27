@@ -28,39 +28,48 @@ let finalScreen  = () => {
     result( );
 };
 
+let appendElement = (element, text, parentElement, id) => {
+    let elementToAppend = document.createElement(element);
+    elementToAppend.innerText = text;
+    if(id){
+        elementToAppend.id = id;
+    }
+    parentElement.appendChild(elementToAppend);
+};
+
 let result = () => {
     let resultDiv = document.createElement("div");
-
+    resultDiv.className = 'result'
     container.appendChild(resultDiv);
+    
 
     data.forEach( (question, index) => {
-        console.log(index)
-        let questionTitle = document.createElement("h2");
-        questionTitle.innerText = 'Question: ';
-        resultDiv.appendChild(questionTitle);
+        let questionResult = document.createElement('div');
+        questionResult.className = 'question-result';
+        resultDiv.appendChild(questionResult)
 
-        let actualQuestion = document.createElement("p");
-        actualQuestion.innerText = data[index].question;
-        resultDiv.appendChild(actualQuestion);
 
-        let answerSubmittedTitle = document.createElement("h2");
-        answerSubmittedTitle.innerText = 'Answer submitted: ';
-        resultDiv.appendChild(answerSubmittedTitle);
 
-        let actualSnswerSubmitted = document.createElement("p");
-        actualSnswerSubmitted.innerText = answersSubmitted[index];
-        resultDiv.appendChild(actualSnswerSubmitted);
+        appendElement('div', '', questionResult, `div1-${index}`);
+        let div1 = document.getElementById(`div1-${index}`)
+        div1.className = "result-row";
+        appendElement('h2', 'Question: ', div1);
+        appendElement('p', data[index].question, div1);
 
-        let correctAnswerTitle = document.createElement("h2");
-        correctAnswerTitle.innerText = 'Correct Answer: ';
-        resultDiv.appendChild(correctAnswerTitle);
+        appendElement('div', '', questionResult, `div2-${index}`);
+        let div2 = document.getElementById(`div2-${index}`)
+        div2.className = "result-row";
 
-        let actualCorrectAnswer = document.createElement("p");
-        actualCorrectAnswer.innerText = data[index].correctAnswer;
-        resultDiv.appendChild(actualCorrectAnswer);
-        
-        let line = document.createElement('hr');
-        resultDiv.appendChild(line)
+        appendElement('h2', 'Answer submitted: ', div2);
+        appendElement('p', answersSubmitted[index], div2);
+
+
+        appendElement('div', '', questionResult, `div3-${index}`);
+        let div3 = document.getElementById(`div3-${index}`)
+        div3.className = "result-row";
+
+        appendElement('h2', 'Correct Answer: ', div3);
+        appendElement('p', data[index].correctAnswer, div3);
     })
 };
 
@@ -85,6 +94,8 @@ let addOnClickToButtons = () => {
 
 let startGame = () => {
     startButton.remove();
+    header.removeAttribute('hidden');
+    possibleAnswers.removeAttribute('hidden')
     setQuestion();
     setButtons();
     addOnClickToButtons();
