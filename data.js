@@ -1,9 +1,9 @@
 var data = [
     {
         id: 1,
-        question: 'In Florida only on Sundays,',
-        possibleAnswers: ['Paint', 'Go to the bar', 'Do her nails', 'Skydive' ],
-        correctAnswer: 'Skydive',
+        question: 'What do you call a group of unicorns?',
+        possibleAnswers: ['Groupcorns', 'Group of unicorns', 'Blessing', 'Light' ],
+        correctAnswer: 'Blessing',
     },
 
     {
@@ -25,16 +25,16 @@ var data = [
     {
         id: 4,
         question: 'What was Marilyn Monroe’s natural hair color?',
-        possibleAnswers: ['Red', 'Blonde', 'Black', 'Green' ],
+        possibleAnswers: ['Red', 'Blonde', 'Black', 'None, she was bald' ],
         correctAnswer: 'Red',
 
     },
 
     {
         id: 5,
-        question: 'What is banned in public places ',
-        possibleAnswers: ['Farting', 'Doing a car wheel', 'Singing', 'Pray' ],
-        correctAnswer: 'Farting',
+        question: 'What animal cannot stick out their tongue?',
+        possibleAnswers: ['Bats', 'Crocodiles', 'Fish', 'Pandas' ],
+        correctAnswer: 'Crocodiles',
 
     },
 ]

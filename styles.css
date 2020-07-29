@@ -1,19 +1,22 @@
+* {
+    font-family: 'Concert One', sans-serif;
+}
+
 html {
     min-height: 100vh;
 }
 
 body{
-    display: flex;
+    background-image: linear-gradient(#DE66A6, #6751E2);
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(#DE66A6, #6751E2);
-    margin: 0;
+    display: flex;
+    margin: 0px;
 }
 
-.result {
+#result {
     min-width: 700px;
-    /* margin-top: 30px; */
 }
 
 .question-result {
@@ -26,36 +29,41 @@ body{
     border: none;
     margin: 30px;
 }
+
 .result-row{
     margin: 20px;
 }
 
 .result-row>h2, .result-row>p {
+    font-size: 1.3em;
     display: inline;
 }
 
-
 #start-button {
-    box-shadow: 0px 4px #ED9BE5;
+    box-shadow: 0px 6px #ED9BE5;
     background-color: white;
+    transition:  all 0.3s;
     border-radius: 16px;
+    position: relative;
     padding: 20px 30px;
     font-weight: bold;
     color: #2E2A72;
     font-size: 30px;
+    outline: none;
     border: none;
+    top: 0;
 }
 
 #container {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    display: flex;
+    display: none;
 }
 
 #container>p {
-    color: white;
     font-size: 30px;
+    color: white;
 }
 
 #question{
@@ -73,19 +81,56 @@ body{
 }
 
 #posible-answers>button{
-    box-shadow: 0px 4px #ED9BE5;
+    box-shadow: 0px 6px #ED9BE5;
     background-color: white;
+    transition:  all 0.3s;
     border-radius: 16px;
     padding: 20px 30px;
+    position: relative;
     font-weight: bold;
     color: #2E2A72;
     font-size: 20px;
     outline: none;
     border: none;
     margin: 10px;
+    top: 0;
 }
 
-#posible-answers>button:focus {
-    background-color: rgb(230, 230, 230);
-    box-shadow: 0px 2px #ED9BE5;
+#posible-answers>button:active, #start-button:active, #posible-answers>button:focus, #start-button:focus{
+    box-shadow: 0px 3px #ED9BE5;
+    top:3px;
 }
+
+@media(max-width: 500px) {
+    #container {
+        width: 82%;
+    }
+
+    #posible-answers {
+        margin-top: 30px;
+        padding: 0px;
+    }
+    
+    #posible-answers>button {
+        margin: 10px 0px;
+        width: 100%;
+    }
+
+    .result{
+        min-width: auto;
+    }
+
+    .question-result{
+        margin: 25px 0px;
+        padding: 5px;
+    }
+
+    .result-row{
+        margin: 10px;
+    }
+
+    #container>p {
+        text-align: center;
+    }
+
+  }
