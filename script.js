@@ -61,7 +61,7 @@ const trackAnswers = (event) => {
 };
 
 const finalScreen = () => {
-    header.innerHTML = 'Enhorabuena!';
+    header.innerHTML = correctNumberOfAnswers >= 4 ? 'Enhorabuena!' : 'Better luck next time';
     possibleAnswers.remove();
     appendElement('p', `Number of correct answers: ${correctNumberOfAnswers}`, container)
     result();
