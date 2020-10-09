@@ -33,7 +33,7 @@ const setQuestion = () => {
 
 const setButtonClick = () => {
     possibleAnswers.addEventListener('click', (event) => {
-        if (event.srcElement.tagName === 'BUTTON') {
+        if (event.target.tagName === 'BUTTON') {
             trackAnswers(event)
             event.target.blur()
             event.target.disabled = true
